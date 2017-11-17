@@ -7,6 +7,14 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import {HeroService} from "./hero.service";
 import { MessagesComponent } from './messages/messages.component';
+import { MessageService } from './message.service';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryDataServiceService } from './in-memory-data-service.service';
+import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
+import { AccessEventsComponent } from './access-events/access-events.component';
+import { AccessEventService } from './access-event.service';
+import { UserComponent } from './user/user.component';
+import { UserService } from './user.service';
 
 
 @NgModule({
@@ -14,13 +22,19 @@ import { MessagesComponent } from './messages/messages.component';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    MessagesComponent
+    MessagesComponent,
+    AccessEventsComponent,
+    UserComponent,
+
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    HttpClientModule,
+
   ],
-  providers: [HeroService],
+  providers: [HeroService, MessageService, InMemoryDataServiceService, AccessEventService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

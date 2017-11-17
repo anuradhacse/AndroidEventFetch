@@ -17,7 +17,8 @@ export class HeroesComponent implements OnInit {
   constructor(private heroService: HeroService){}
 
   ngOnInit() {
-    this.getHeroes();
+    // this.getHeroes();
+    this.getPrefetchingList();
   }
 
   /*getHeroes(){
@@ -27,6 +28,14 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
+  }
+
+  getPrefetchingList(): void{
+    this.heroService.getPrefetcherList().subscribe(
+      data => {
+        console.log(data);
+      }
+    );
   }
 
   onSelect(hero: Hero): void { this.selectedHero = hero; }

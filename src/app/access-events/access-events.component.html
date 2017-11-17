@@ -1,0 +1,8 @@
+<h2>File Access Events</h2>
+<ul>
+  <li  *ngFor="let event of events" (click)="onSelect(event)">
+    <span>{{event.current_file}}</span> {{event.event_type}}
+  </li>
+</ul>
+
+
