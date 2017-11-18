@@ -8,7 +8,7 @@ import {Observable} from 'rxjs/Rx';
 @Component({
   selector: 'app-access-events',
   templateUrl: './access-events.component.html',
-  styleUrls: ['../heroes/heroes.component.css']
+  styleUrls: ['./access-events.component.css']
 })
 export class AccessEventsComponent implements OnInit, OnDestroy {
 

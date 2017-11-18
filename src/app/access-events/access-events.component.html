@@ -1,5 +1,22 @@
-<h2>File Access Events</h2>
-<ul>
+<table >
+  <tr>
+    <th>Current File</th>
+    <th>Event Type</th>
+    <th>Successor1</th>
+    <th>Successor2</th>
+    <th>Successor3</th>
+    <th>Successor4</th>
+  </tr>
+  <tr *ngFor="let event of events" (click)="onSelect(event)">
+    <td>{{event.current_file}}</td>
+    <td>{{event.event_type}}</td>
+    <td class="successor">{{event.successor_list[0].name}}</td>
+    <td>{{event.successor_list[1].name}}</td>
+    <td>{{event.successor_list[1].name}}</td>
+    <td>{{event.successor_list[1].name}}</td>
+  </tr>
+</table>
+<!--<ul>
   <li  *ngFor="let event of events" (click)="onSelect(event)">
     <span>{{event.current_file}}</span> <span>{{event.event_type}}</span>
     <span>{{event.successor_list[0].name}}</span>
@@ -9,6 +26,6 @@
     <span>{{event.successor_list[1].availability}}</span>
     <span>{{event.successor_list[1].prefetched}}</span>
   </li>
-</ul>
+</ul>-->
 
 
