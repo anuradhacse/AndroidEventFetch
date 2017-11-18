@@ -18,7 +18,6 @@ export class HeroesComponent implements OnInit {
 
   ngOnInit() {
     // this.getHeroes();
-    this.getPrefetchingList();
   }
 
   /*getHeroes(){
@@ -30,13 +29,7 @@ export class HeroesComponent implements OnInit {
       .subscribe(heroes => this.heroes = heroes);
   }
 
-  getPrefetchingList(): void{
-    this.heroService.getPrefetcherList().subscribe(
-      data => {
-        console.log(data);
-      }
-    );
-  }
+
 
   onSelect(hero: Hero): void { this.selectedHero = hero; }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AccessEventService} from "../access-event.service";
 import {AccessEvent} from "../access-event";
+import {Successor} from "../successor";
 
 @Component({
   selector: 'app-access-events',
@@ -13,6 +14,7 @@ export class AccessEventsComponent implements OnInit {
 
   events: AccessEvent[];
   selectedEvent: AccessEvent;
+  successors: Successor[];
 
   ngOnInit() {
   this.getFileAccessEvents();
@@ -21,7 +23,7 @@ export class AccessEventsComponent implements OnInit {
   getFileAccessEvents(): void {
     this.accessEventService.getPrefetcherList().subscribe(
       events => {
-        console.log('component ' + events);
+        console.log('component ' + events[0].successor_list[0].name);
         this.events = events;
       },
       err => {
